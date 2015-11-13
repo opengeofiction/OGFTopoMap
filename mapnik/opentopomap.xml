@@ -23,7 +23,7 @@
        <!ENTITY military-fill SYSTEM "inc-style/military-fill.sty">
 
        <!ENTITY contours SYSTEM "inc-style/contours.sty">
-       <!ENTITY layer-contours SYSTEM "opentopomap_contours.include">
+       <!ENTITY layer-contours SYSTEM "/opt/osm/contours/opentopomap_contours.include">
        
        <!ENTITY borders-draw SYSTEM "inc-style/borders-draw.sty">
        <!ENTITY railways-embankment SYSTEM "inc-style/railways-embankment.sty">
