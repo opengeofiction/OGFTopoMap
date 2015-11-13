@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map
 [
-       <!ENTITY world_boundaries_dir   "world_boundaries/">
+       <!ENTITY world_boundaries_dir   "/opt/osm/openstreetmap-carto/data/land-polygons-split-3857/">
        
        <!ENTITY world SYSTEM "inc-style/world.sty">
        <!ENTITY landuse-fill SYSTEM "inc-style/landuse-fill.sty">
@@ -131,14 +131,14 @@
 		<StyleName>world</StyleName>
 		<Datasource>
 			<Parameter name="type">shape</Parameter>
-			<Parameter name="file">&world_boundaries_dir;/shoreline_300</Parameter>
+			<Parameter name="file">&world_boundaries_dir;/land_polygons</Parameter>
 		</Datasource>
 	</Layer>
 	<Layer name="coast-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
 		<StyleName>coast-poly</StyleName>
 		<Datasource>
 			<Parameter name="type">shape</Parameter>
-			<Parameter name="file">&world_boundaries_dir;/processed_p</Parameter>
+			<Parameter name="file">&world_boundaries_dir;/land_polygons</Parameter>
 		</Datasource>
 	</Layer>
 	  
@@ -151,38 +151,149 @@
 		</Datasource>
 	</Layer>
 
-	<Layer name="relief-5000" status="on">
-		<StyleName>relief-5000</StyleName>
+    <!-- hillshade Roantra -->
+	<Layer name="relief-roantra-5000" status="on">
+        <StyleName>relief-5000</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Roantra/relief-roantra-5000.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="relief-roantra-500" status="on">
+        <StyleName>relief-500</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Roantra/relief-roantra-500.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+	<Layer name="hillshade-roantra-5000" status="on">
+		<StyleName>hillshade-5000</StyleName>
 		<Datasource>
 			<Parameter name="type">gdal</Parameter>
-			<Parameter name="file">hillshade/relief-5000.tif</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Roantra/hillshade-roantra-5000.tif</Parameter>
 			<Parameter name="format">tiff</Parameter>
 		</Datasource>
 	</Layer>
 
-	<Layer name="relief-500" status="on">
-		<StyleName>relief-500</StyleName>
+	<Layer name="hillshade-roantra-2000" status="on">
+		<StyleName>hillshade-1000</StyleName>
 		<Datasource>
 			<Parameter name="type">gdal</Parameter>
-			<Parameter name="file">hillshade/relief-500.tif</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Roantra/hillshade-roantra-2000.tif</Parameter>
 			<Parameter name="format">tiff</Parameter>
 		</Datasource>
 	</Layer>
+
+	<Layer name="hillshade-roantra-500" status="on">
+		<StyleName>hillshade-500</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Roantra/hillshade-roantra-500.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-roantra-150" status="on">
+		<StyleName>hillshade-90</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Roantra/hillshade-roantra-150.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+    <!-- hillshade Khaiwoon -->
+	<Layer name="relief-khaiwoon-5000" status="on">
+        <StyleName>relief-5000</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Khaiwoon/relief-khaiwoon-5000.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="relief-khaiwoon-500" status="on">
+        <StyleName>relief-500</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Khaiwoon/relief-khaiwoon-500.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+	<Layer name="hillshade-khaiwoon-5000" status="on">
+		<StyleName>hillshade-5000</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Khaiwoon/hillshade-khaiwoon-5000.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-khaiwoon-2000" status="on">
+		<StyleName>hillshade-1000</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Khaiwoon/hillshade-khaiwoon-2000.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-khaiwoon-500" status="on">
+		<StyleName>hillshade-500</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Khaiwoon/hillshade-khaiwoon-500.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-khaiwoon-150" status="on">
+		<StyleName>hillshade-90</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Khaiwoon/hillshade-khaiwoon-150.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+    <!-- hillshade Ardisphere -->
+	<Layer name="relief-5000" status="on">
+        <StyleName>relief-5000</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Ardisphere/relief-5000.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="relief-500" status="on">
+        <StyleName>relief-500</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Ardisphere/relief-500.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
 
 	<Layer name="hillshade-5000" status="on">
 		<StyleName>hillshade-5000</StyleName>
 		<Datasource>
 			<Parameter name="type">gdal</Parameter>
-			<Parameter name="file">hillshade/hillshade-5000.tif</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Ardisphere/hillshade-5000.tif</Parameter>
 			<Parameter name="format">tiff</Parameter>
 		</Datasource>
 	</Layer>
 
-	<Layer name="hillshade-1000" status="on">
+	<Layer name="hillshade-2000" status="on">
 		<StyleName>hillshade-1000</StyleName>
 		<Datasource>
 			<Parameter name="type">gdal</Parameter>
-			<Parameter name="file">hillshade/hillshade-1000.tif</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Ardisphere/hillshade-2000.tif</Parameter>
 			<Parameter name="format">tiff</Parameter>
 		</Datasource>
 	</Layer>
@@ -191,19 +302,78 @@
 		<StyleName>hillshade-500</StyleName>
 		<Datasource>
 			<Parameter name="type">gdal</Parameter>
-			<Parameter name="file">hillshade/hillshade-500.tif</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Ardisphere/hillshade-500.tif</Parameter>
 			<Parameter name="format">tiff</Parameter>
 		</Datasource>
 	</Layer>
 
-	<Layer name="hillshade-90" status="on">
+	<Layer name="hillshade-150" status="on">
 		<StyleName>hillshade-90</StyleName>
 		<Datasource>
 			<Parameter name="type">gdal</Parameter>
-			<Parameter name="file">hillshade/hillshade-90.tif</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Ardisphere/hillshade-150.tif</Parameter>
 			<Parameter name="format">tiff</Parameter>
 		</Datasource>
 	</Layer>
+
+    <!-- hillshade Mahhal -->
+	<Layer name="relief-5000" status="on">
+        <StyleName>relief-5000</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Mahhal/relief-5000.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="relief-500" status="on">
+        <StyleName>relief-500</StyleName>
+        <Datasource>
+            <Parameter name="type">gdal</Parameter>
+            <Parameter name="file">/opt/osm/hillshade/Mahhal/relief-500.tif</Parameter>
+            <Parameter name="format">tiff</Parameter>
+        </Datasource>
+    </Layer>
+
+	<Layer name="hillshade-5000" status="on">
+		<StyleName>hillshade-5000</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Mahhal/hillshade-5000.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-2000" status="on">
+		<StyleName>hillshade-1000</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Mahhal/hillshade-2000.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-500" status="on">
+		<StyleName>hillshade-500</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Mahhal/hillshade-500.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+	<Layer name="hillshade-150" status="on">
+		<StyleName>hillshade-90</StyleName>
+		<Datasource>
+			<Parameter name="type">gdal</Parameter>
+			<Parameter name="file">/opt/osm/hillshade/Mahhal/hillshade-150.tif</Parameter>
+			<Parameter name="format">tiff</Parameter>
+		</Datasource>
+	</Layer>
+
+
+
+
 
 	<Layer name="glaciers">
 		<StyleName>glaciers</StyleName>
